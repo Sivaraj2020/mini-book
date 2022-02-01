@@ -2,30 +2,43 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
+const Book1 ={
+  title: "Holiday Special",
+  author:" Kelly Barnhill ",
+  img: "https://m.media-amazon.com/images/I/A1d2YfV1+sL._AC_UY327_FMwebp_QL65_.jpg",
+
+};
+const Book2 ={
+  title: "Jokes And Riddles For Kids",
+  author:" Ibrahim AlNaham ",
+  img: "https://m.media-amazon.com/images/I/61o40ccwxoL._AC_UY327_FMwebp_QL65_.jpg",
+
+};
 function Booklist() {
   return (
-    <section className="booklist">
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-    </section>
+    <article className="booklist">
+      <Book
+      title = {Book1.title}
+      author = {Book1.author} 
+      img= {Book1.img}
+      />
+       <Book
+      title = {Book2.title}
+      author = {Book2.author} 
+      img= {Book2.img}
+      />
+    </article>
   );
 }
 
-const title = "The Girl Who Drank the Moon";
-const author = " Kelly Barnhill ";
-const Book = () => {
+
+const Book = ({img,title,author}) => {
+   
   return (
     <article className="book">
-      <img
-        src="https://images.pexels.com/photos/9793670/pexels-photo-9793670.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-        alt=""
-      />
+      <img src={img} alt=""/>
       <h1>{title}</h1>
-      <h4>{author}</h4>
+      <p>{author}</p>
     </article>
   );
 };
